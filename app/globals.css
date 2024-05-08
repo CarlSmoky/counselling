@@ -4,6 +4,6 @@
 
 @layer utilities {
   .margin-global {
-    @apply mx-4 md:mx-10 lg:mx-20 xl:mx-36
+    @apply lg:mx-20 xl:mx-36
   }
 }

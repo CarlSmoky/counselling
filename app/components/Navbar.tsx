@@ -5,6 +5,7 @@ import Image from "next/image";
 import NavLinks from "./NavLinks";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Logo from "../../public/logo.png"
+import ContactInfoBar from "./ContactInfoBar"
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -18,20 +19,23 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="margin-global whitespace-nowrap text-prime-100 text-base xl:text-lg font-paragraph bg-white-100">
-      <div className="flex justify-between">
+    <nav className="margin-global  whitespace-nowrap text-prime-100 text-base xl:text-lg font-paragraph bg-white-100">
+      <ContactInfoBar />
+      <div className="flex justify-between px-4 h-[80px] md:h-[120px] ">
         <div className="z-50 py-3 w-full flex justify-between">
           <Link
             href="/"
             onClick={() => {
               closeNav();
             }}
+            className="flex"
           >
             <Image
               src={Logo}
-              alt="Momo gallery logo"
-              className="sm:cursor-pointer w-36 md:w-48 lg:w-56"
+              alt="Interactive Counseling Resource Logo"
+              className="flex  my-auto sm:cursor-pointer w-[200px] md:w-[340px]"
               sizes="33vw"
+              priority
             />
           </Link>
           <div
