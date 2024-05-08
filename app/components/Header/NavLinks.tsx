@@ -2,8 +2,8 @@
 import React, { useState, Fragment } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LinkInfo, Sublink } from "../types/types";
-import { navList } from "../data/navList";
+import { LinkInfo, Sublink } from "../../types/types";
+import { navList } from "../../data/navList";
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
 
 const NavLinks: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
