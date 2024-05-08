@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import NavLinks from "./NavLinks";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import Logo from "../../public/logo.png"
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -26,12 +27,12 @@ const Navbar: React.FC = () => {
               closeNav();
             }}
           >
-            {/* <Image
+            <Image
               src={Logo}
               alt="Momo gallery logo"
               className="sm:cursor-pointer w-36 md:w-48 lg:w-56"
               sizes="33vw"
-            /> */}
+            />
           </Link>
           <div
             className="cursor-pointer text-3xl lg:hidden text-black-100 my-auto"
