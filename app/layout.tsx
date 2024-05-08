@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { paragraphFont, titleFont } from "./fonts";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Header/Navbar";
+import Footer from "./components/Footer/Footer"
 
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ const RootLayout: React.FC<childrenProps> = ({ children }: childrenProps) => {
         <main className={`${titleFont.variable} ${paragraphFont.variable}`}>
             <Navbar />
             {children}
-            {/* <Footer /> */}
+            <Footer />
         </main>
       </body>
     </html>
