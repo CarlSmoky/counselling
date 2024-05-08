@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { paragraphFont, titleFont } from "./fonts";
+import Navbar from "./components/Navbar";
 
 
 export const metadata: Metadata = {
@@ -15,9 +16,9 @@ interface childrenProps {
 const RootLayout: React.FC<childrenProps> = ({ children }: childrenProps) => {
   return (
     <html lang="en">
-      <body className="bg-prime-100">
+      <body className="bg-white-100">
         <main className={`${titleFont.variable} ${paragraphFont.variable}`}>
-            {/* <Navbar /> */}
+            <Navbar />
             {children}
             {/* <Footer /> */}
         </main>
