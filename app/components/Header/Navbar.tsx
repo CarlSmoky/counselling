@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import NavLinks from "./NavLinks";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import Logo from "../../public/logo.png"
+import Logo from "../../../public/logo.png"
 import ContactInfoBar from "./ContactInfoBar"
 
 const Navbar: React.FC = () => {
