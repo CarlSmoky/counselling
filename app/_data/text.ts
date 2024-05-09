@@ -1,0 +1,222 @@
+export const contents = {
+  home : [
+    { 
+      component: "paragraph",
+      paragraph: `Welcome!
+
+          I am a Registered Social Worker, Psychotherapist, and Clinical Supervisor. My practice is located in downtown Toronto, close to Lansdowne and Dundas West subway stations. I also offer online and phone sessions.
+    
+          If you are interested in psychotherapy or clinical supervision that is based on racial liberation and anti-oppression principles, we could be a great match! My style is warm, compassionate, and collaborative, with an aim to promote deep insight and practical skills to foster personal and professional growth.`
+    },
+    {
+      component: "list",
+      title: "I am skilled and experienced in the following short and long term therapy approaches:",
+      items: [
+        "Trauma Informed and Trauma Focused Psychotherapy",
+        "Humanistic Approaches: Feminist, Anti-Racist, QTBIPOC",
+        "Decolonized, holistic, body based, land based, and traditional healing methods",
+        "Parts Work",
+        "EMDR",
+        "Emotion Focused Therapy and 2 chair dialogues",
+        "Emotion Focused Couples Therapy",
+        "Mindfulness",
+        "Narrative",
+        "Grief and Non-Death Loss",
+        "Harm Reduction and Addictions",
+        "Tapping"
+      ],
+    },
+    {component: "paragraph",
+      title: "",
+      paragraph : `I support individuals who are 18 years and older, couples, polycules, and families`
+    }
+  ],
+  psychotherapy : [
+    {
+      "component": "paragraph",
+      "paragraph": `Are you dealing with personal, work, or family stress? Living with intense or unexpressed emotions? Looking for a therapist who can explore and understand diversity? I support people to feel better – by working with you to make sense of challenging emotions, life experiences, and the impacts of systems of oppression, to understand and move past the patterns that keep you stuck, and to strengthen emotional bonds with yourself and others.`,
+    },
+    {
+      component: "list",
+      title: "Areas of focus: ",
+      items: [
+        "Connecting with your true self",
+        "Work stress and burnout (especially helpers, advocates, and social change makers)",
+        "Challenging emotions (anger, anxiety, grief and sadness, feeling stuck)",
+        "Decolonization",
+        "Self-acceptance",
+        "Relationships",
+        "Sex and intimacy",
+        "Chronic health issues",
+        "Surviving violence and trauma",
+        "Ambiguous grief and non-death loss",
+        "Discrimination",
+        "Abortion, fertility and adoption processes",
+        "Substance use",
+        "Life transitions",
+        "Caring for family members",
+        "Compassion fatigue",
+        "Navigating systems, advocacy, and self-care"
+     ]
+    },
+    {
+      component: "paragraph",
+      paragraph : `Think you might be ready? My practice is QTBIPOC a positive, welcoming individuals, and couples in multiple love, open, and monogamous relationships.`
+    },
+    {
+      component: "list", 
+      title: "Rates and coverage:",
+      items: [
+        "Individual sessions are $180",
+        "2+ person sessions are prorated to $180 for 60 minutes / 75 minute minimum",
+        "75 minute sessions are $225",
+        "90 minute sessions are $270"
+      ]
+    },
+    {
+      component: "paragraph",
+      paragraph: `I am a registered mental health provider with the Non-Insured Health Benefits Program, which covers 15 sessions of crisis counselling to Indigenous people with a status card, and the Indian Residential Schools- Resolution Health Support Program, which covers ongoing counselling to residential school survivors and family members. 
+    
+      As a Registered Social Worker, my services are covered by the Medical Expense Tax Credit, some insurance plans, and may be eligible for coverage through the Non-Insured Health Benefits Program.  My services can also be claimed under plans that recognize Registered Psychotherapists and Registered Social Workers.`
+    }
+  ],
+  specializations : [
+    { 
+      component: "paragraph",
+      paragraph: `From Surviving to Thriving
+
+        I understand trauma as any wounding of the Spirit.
+
+        I use a trauma informed, integrative approach in working with people to make sense of painful or challenging experiences. This approach can involve anti-colonial, anti-oppression, strengths-based, narrative, and cognitive-behavioural therapies, as well as mindfulness, holistic, and land-based healing approaches, depending on what fits for you.
+
+        My work with survivors often involves enhancing skills to address the results of interpersonal, intergenerational, institutional, or systemic violence and oppression in early life and adulthood. Areas of focus can include self-acceptance, grief and loss, flashbacks, nightmares, dissociation, difficulty with coping and trust, fear, anxiety, panic, shame, and other challenging emotions.
+
+        Together, we create goals that make sense to you and work at your pace.
+  
+        Relationships and Sexuality
+
+        Our life experiences and social realities can have a significant impact on how we experience our body and sexuality.  Yet, there is very little space to reflect on these processes, clarify our wants, and actively construct our desires.
+
+        I work with people to navigate challenging aspects in life, by gently building awareness of personal and interpersonal cycles that can keep us feeling stuck. I aim to offer a compassionate space to hold the layers that can surface in reclaiming our bodies, sexualities, and relationships. This work can enhance emotional bonds in monogamous, open, and poly relationships.
+        
+        I have extensive experience therapeutically supporting people (and their friends and family) who are engaged in sex work, kink, dealing with coming out, opening up, asexuality, have LGBTQ experience, or who embrace and embody gender variance. I am also skilled in and comfortable with nurturing sexuality in connection to surviving violence.
+      
+        Mindfulness 
+        We can use mindfulness approaches to bring awareness and compassion to emotions and life experiences. This process can also help enhance the ability to respond instead of react. Guided mindfulness practice may be integrated throughout, or used at the beginning or end of sessions to transition and ground.
+      
+      Substance Use 
+        I use a harm reduction approach when a person is actively drinking or using drugs – focusing on support, information and practical strategies to increase physical and emotional wellbeing, and to manage day to day life.  Harm reduction psychotherapy can include a range of intersecting areas, defined by your goals and priorities.
+
+        For people who are interested in reducing or abstaining from drugs or alcohol, I am able to support and guide you through various stages of change, using a gentle approach to develop effective, solution-focused strategies and foster resiliency.
+        
+        All substance use work can involve a fluid integration of harm reduction and abstinence or reduction approaches, depending your needs and circumstances.  This work can also be done alongside mindfulness practice or trauma focused work.
+      `
+      }
+    ],
+    "workshops" : [
+      {
+      component: "quote",
+      quote : `
+        “The most common way people give up their power is by thinking they don’t have any.”
+      `,
+      author: "– Alice Walker"
+      },
+      {
+      component: "paragraph",
+      paragraph : `With 20+ years of experience working at the intersections of class, race, gender and sexual diversity in agencies and community settings, I bring the following areas of experience to my workshops for mental health clinicians:
+      `,
+      },
+      {
+        component: "list",
+        items : [
+        "Self-advocacy",
+        "Being an ally or advocate",
+        "Intersecting sites of oppression and resistance",
+        "Community Resources",
+        "Street Outreach",
+        "Prison In-reach",
+        "Navigating child welfare, mental health, medical, legal and immigration systems",
+        "Homelessness and street-involvement",
+        "Sex work",
+        "Burnout and Compassion Fatigue for caregivers, helpers, and advocates",
+        "Vicarious Trauma and Secondary Trauma"
+      ],
+    },{
+      component: "paragraph",
+      paragraph : `I also offer workshops that centre anti-oppression and racial liberation to other professional groups including health care workers, educators, advocates, and unions, on the following topics:`
+    },
+    {
+      component: "list",
+      items : [
+        "Compassion Fatigue",
+        "Vicarious Trauma",
+        "Holistic Self Care Practices",
+        "Building Relationships",
+        "Mentorship",
+        "Group Dynamics",
+        "Assertive Communication",
+        "Visioning and Goal Setting"
+      ]
+    },
+    {
+      component: "list",
+      title: "Rates: ",
+      items : [
+        "Half Day Workshops are $1500 + HST",
+        "Full Day Workshops are $2500 + HST"
+      ]
+    }
+  ],
+  "clinical supervision" : [
+    {
+      component : "quote",
+      quote : `
+      “Forget your perfect offering
+        There is a crack in everything
+        That’s how the light gets in”
+      `,
+      author: "– Leonard Cohen."
+    },
+    {
+      component : "paragraph",
+      paragraph : `
+        Clinical supervision is available to CRPO Qualifying Members, Social Workers and Psychotherapists in private practice, and to front line workers in agency settings, whose practice integrates anti-oppression principles with a trauma focus or with substance use support.  I also support clinicians who are interested in vicarious trauma, compassion fatigue, and self-care.  I use a supportive, integrated model of supervision that respects your professional experience and aims to promote self-reflection while enhancing technical skills.
+
+        I also consult with community agencies that support survivors of trauma and whose practice includes harm reduction or work to address substance use concerns.  These services can include program review, in service training, and group supervision with front line workers, counsellors, and case managers.
+        
+        If you are interested in a workshop tailored to your group’s needs, please contact me for more information.`
+    },
+    {
+      component: "list",
+      title: "Rates: ",
+      items : [
+        "Individual clinical supervision is $180+HST for one hour ",
+        "Clinical consultation for agencies in downtown Toronto is $250/hour (2 hour minimum)",
+        ]
+    }
+  ],
+  "about me" : [
+    {
+      component : "paragraph",
+      paragraph : `
+        My psychotherapy and supervision practices are supported by a vision for social healing and transformation, regular mindfulness and land based practices, and ongoing professional development`
+    },
+    {
+      component: "list",
+        title: "I’m a member of the following professional groups",
+        items : [
+          "College of Registered Social Workers and Social Service Workers",
+          "Ontario Association of Social Workers",
+          "Trauma focused clinical supervision from Natalie Zlodre, MSW, RSW as needed",
+          "EMDR and traditional healing supervision from Shelley Spears Chief, MSW, RSW",
+          "LGBTQ peer supervision group",
+          "Peer supervision group for clinical supervisors"
+        ]
+    },
+    {
+      component : "paragraph",
+      paragraph : `
+        I have a Masters of Social Work Degree from Wilfrid Laurier University.  I have been practicing psychotherapy since 2003.`
+    }
+  ]
+}
