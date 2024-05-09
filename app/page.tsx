@@ -1,12 +1,17 @@
+import React from "react";
+import PageWrapper from "./_components/PageWrapper";
+// import PortraitImage from "./_components/PortraitImage"
+import { contents } from "./_data/text";
 
+const page = "home";
+const header = "Bo Yih Thom, MSW, RSW";
 
-const Home: React.FC = () => {
+const HomePage: React.FC = () => {
   return (
     <>
-      <h2>hello</h2>
+      <PageWrapper header={header} contents={contents[page]}/>
     </>
-    
-  )
-}
+  );
+};
 
-export default Home;
+export default HomePage;
