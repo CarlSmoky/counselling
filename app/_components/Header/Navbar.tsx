@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
         {/* Mobile nav */}
         <ul
           className={`
-        lg:hidden bg-white-100 fixed w-full top-0 overflow-y-auto bottom-0 py-24
+        lg:hidden bg-white-100 fixed w-full top-0 overflow-y-auto bottom-0 py-48
         duration-500 ${open ? "left-0 z-30" : "left-[-100%] z-10"}
         `}
         >
