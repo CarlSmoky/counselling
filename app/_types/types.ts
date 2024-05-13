@@ -11,10 +11,18 @@ export type Sublink = {
 }
 
 export type PageInfo = {
-  component: string;
+  component: ComponentType;
+  subtitle?: string;
+  isSubtitleBold?: boolean;
   paragraph?: string;
   title?: string;
   items?: string[];
   quote?: string;
   author?: string;
+  isTitleBold: boolean,
+  isItemsBold? : boolean;
+  isBulletPoint?: boolean;
 }
+
+export type ComponentType = "paragraph" | "list" |"quote"
+

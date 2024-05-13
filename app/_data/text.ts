@@ -5,12 +5,15 @@ export const contents = {
       paragraph: `Welcome!
 
           I am a Registered Social Worker, Psychotherapist, and Clinical Supervisor. My practice is located in downtown Toronto, close to Lansdowne and Dundas West subway stations. I also offer online and phone sessions.
-    
-          If you are interested in psychotherapy or clinical supervision that is based on racial liberation and anti-oppression principles, we could be a great match! My style is warm, compassionate, and collaborative, with an aim to promote deep insight and practical skills to foster personal and professional growth.`
+
+          If you are interested in psychotherapy or clinical supervision that is based on racial liberation and anti-oppression principles, we could be a great match! 
+          
+          My style is warm, compassionate, and collaborative, with an aim to promote deep insight and practical skills to foster personal and professional growth.`
     },
     {
       component: "list",
       title: "I am skilled and experienced in the following short and long term therapy approaches:",
+      isTitleBold: false,
       items: [
         "Trauma Informed and Trauma Focused Psychotherapy",
         "Humanistic Approaches: Feminist, Anti-Racist, QTBIPOC",
@@ -25,6 +28,8 @@ export const contents = {
         "Harm Reduction and Addictions",
         "Tapping"
       ],
+      isItemsBold: true,
+      isBulletPoint: true
     },
     {component: "paragraph",
       title: "",
@@ -39,6 +44,7 @@ export const contents = {
     {
       component: "list",
       title: "Areas of focus: ",
+      isTitleBold: true,
       items: [
         "Connecting with your true self",
         "Work stress and burnout (especially helpers, advocates, and social change makers)",
@@ -57,7 +63,9 @@ export const contents = {
         "Caring for family members",
         "Compassion fatigue",
         "Navigating systems, advocacy, and self-care"
-     ]
+      ],
+      isItemsBold: true,
+      isBulletPoint: true,
     },
     {
       component: "paragraph",
@@ -66,12 +74,14 @@ export const contents = {
     {
       component: "list", 
       title: "Rates and coverage:",
+      isTitleBold: true,
       items: [
         "Individual sessions are $180",
         "2+ person sessions are prorated to $180 for 60 minutes / 75 minute minimum",
         "75 minute sessions are $225",
         "90 minute sessions are $270"
-      ]
+      ],
+      isItemsBold: true,
     },
     {
       component: "paragraph",
@@ -83,37 +93,44 @@ export const contents = {
   specializations : [
     { 
       component: "paragraph",
-      paragraph: `From Surviving to Thriving
-
-        I understand trauma as any wounding of the Spirit.
+      subtitle: "From Surviving to Thriving",
+      isSubtitleBold: true,
+      paragraph: `I understand trauma as any wounding of the Spirit.
 
         I use a trauma informed, integrative approach in working with people to make sense of painful or challenging experiences. This approach can involve anti-colonial, anti-oppression, strengths-based, narrative, and cognitive-behavioural therapies, as well as mindfulness, holistic, and land-based healing approaches, depending on what fits for you.
 
         My work with survivors often involves enhancing skills to address the results of interpersonal, intergenerational, institutional, or systemic violence and oppression in early life and adulthood. Areas of focus can include self-acceptance, grief and loss, flashbacks, nightmares, dissociation, difficulty with coping and trust, fear, anxiety, panic, shame, and other challenging emotions.
 
-        Together, we create goals that make sense to you and work at your pace.
-  
-        Relationships and Sexuality
+        Together, we create goals that make sense to you and work at your pace.`
+      }, 
+    {
+      component: "paragraph",
+      subtitle: "Relationships and Sexuality",
+      isSubtitleBold: true,
+      paragraph: `Our life experiences and social realities can have a significant impact on how we experience our body and sexuality.  Yet, there is very little space to reflect on these processes, clarify our wants, and actively construct our desires.
 
-        Our life experiences and social realities can have a significant impact on how we experience our body and sexuality.  Yet, there is very little space to reflect on these processes, clarify our wants, and actively construct our desires.
+    I work with people to navigate challenging aspects in life, by gently building awareness of personal and interpersonal cycles that can keep us feeling stuck. I aim to offer a compassionate space to hold the layers that can surface in reclaiming our bodies, sexualities, and relationships. This work can enhance emotional bonds in monogamous, open, and poly relationships.
+    
+    I have extensive experience therapeutically supporting people (and their friends and family) who are engaged in sex work, kink, dealing with coming out, opening up, asexuality, have LGBTQ experience, or who embrace and embody gender variance. I am also skilled in and comfortable with nurturing sexuality in connection to surviving violence.`
+    }, 
+    {
+      component: "paragraph",
+      subtitle: "Mindfulness",
+      isSubtitleBold: true,
+      paragraph: `We can use mindfulness approaches to bring awareness and compassion to emotions and life experiences. This process can also help enhance the ability to respond instead of react. Guided mindfulness practice may be integrated throughout, or used at the beginning or end of sessions to transition and ground.`
+    },
+    {
+      component: "paragraph",
+      subtitle: "Substance Use",
+      isSubtitleBold: true,
+      paragraph: `I use a harm reduction approach when a person is actively drinking or using drugs – focusing on support, information and practical strategies to increase physical and emotional wellbeing, and to manage day to day life.  Harm reduction psychotherapy can include a range of intersecting areas, defined by your goals and priorities.
 
-        I work with people to navigate challenging aspects in life, by gently building awareness of personal and interpersonal cycles that can keep us feeling stuck. I aim to offer a compassionate space to hold the layers that can surface in reclaiming our bodies, sexualities, and relationships. This work can enhance emotional bonds in monogamous, open, and poly relationships.
-        
-        I have extensive experience therapeutically supporting people (and their friends and family) who are engaged in sex work, kink, dealing with coming out, opening up, asexuality, have LGBTQ experience, or who embrace and embody gender variance. I am also skilled in and comfortable with nurturing sexuality in connection to surviving violence.
+      For people who are interested in reducing or abstaining from drugs or alcohol, I am able to support and guide you through various stages of change, using a gentle approach to develop effective, solution-focused strategies and foster resiliency.
       
-        Mindfulness 
-        We can use mindfulness approaches to bring awareness and compassion to emotions and life experiences. This process can also help enhance the ability to respond instead of react. Guided mindfulness practice may be integrated throughout, or used at the beginning or end of sessions to transition and ground.
-      
-      Substance Use 
-        I use a harm reduction approach when a person is actively drinking or using drugs – focusing on support, information and practical strategies to increase physical and emotional wellbeing, and to manage day to day life.  Harm reduction psychotherapy can include a range of intersecting areas, defined by your goals and priorities.
-
-        For people who are interested in reducing or abstaining from drugs or alcohol, I am able to support and guide you through various stages of change, using a gentle approach to develop effective, solution-focused strategies and foster resiliency.
-        
-        All substance use work can involve a fluid integration of harm reduction and abstinence or reduction approaches, depending your needs and circumstances.  This work can also be done alongside mindfulness practice or trauma focused work.
-      `
-      }
-    ],
-    "workshops" : [
+      All substance use work can involve a fluid integration of harm reduction and abstinence or reduction approaches, depending your needs and circumstances.  This work can also be done alongside mindfulness practice or trauma focused work.`
+    }
+  ],
+  workshops : [
       {
       component: "quote",
       quote : `
@@ -141,6 +158,8 @@ export const contents = {
         "Burnout and Compassion Fatigue for caregivers, helpers, and advocates",
         "Vicarious Trauma and Secondary Trauma"
       ],
+      isItemsBold: true,
+      isBulletPoint: true
     },{
       component: "paragraph",
       paragraph : `I also offer workshops that centre anti-oppression and racial liberation to other professional groups including health care workers, educators, advocates, and unions, on the following topics:`
@@ -156,15 +175,19 @@ export const contents = {
         "Group Dynamics",
         "Assertive Communication",
         "Visioning and Goal Setting"
-      ]
+      ],
+      isItemsBold: true,
+      isBulletPoint: true
     },
     {
       component: "list",
       title: "Rates: ",
+      isTitleBold: true,
       items : [
         "Half Day Workshops are $1500 + HST",
         "Full Day Workshops are $2500 + HST"
-      ]
+      ],
+      isItemsBold: true
     }
   ],
   "clinical supervision" : [
@@ -189,10 +212,12 @@ export const contents = {
     {
       component: "list",
       title: "Rates: ",
+      isTitleBold: true,
       items : [
         "Individual clinical supervision is $180+HST for one hour ",
         "Clinical consultation for agencies in downtown Toronto is $250/hour (2 hour minimum)",
-        ]
+        ],
+        isItemsBold: true
     }
   ],
   "about me" : [

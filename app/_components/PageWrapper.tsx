@@ -13,21 +13,21 @@ interface Props extends PropsWithChildren {
 const PageWrapper: React.FC<Props> = ({header, contents}) => {
   return (
     <section className="margin-global page-min-h">
-      <div className="flex w-full h-[50px] mb-12 bg-grey-100 text-prime-100 font-bold text-xl " >
+      <div className="flex w-full h-[50px] mb-12 bg-grey-100 text-prime-100 font-bold text-xl" >
         <h2 className="mx-auto p-2">{toTitleCase(header)}</h2>
       </div>
       {contents.map((el: PageInfo, i:number) => {
         if (el.component === "paragraph") {
           return (
             <React.Fragment key={i}>
-              <Paragraph paragraph={el.paragraph} />
+              <Paragraph subtitle={el.subtitle} isSubtitleBold={el.isSubtitleBold} paragraph={el.paragraph} />
             </React.Fragment>
           );
         }
         if (el.component === "list") {
           return (
             <React.Fragment key={i}>
-              <List title={el.title} items={el.items} isItemsBold isTitleBold/>
+              <List title={el.title} items={el.items} isItemsBold={el.isItemsBold} isTitleBold={el.isTitleBold} isBulletPoint={el.isBulletPoint}/>
             </React.Fragment>
           );
         }
