@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Contact = () => {
   return (
-    <section className="margin-global my-8 px-4 leading-loose">
+    <section className="my-8 px-4 leading-loose">
       <p className="font-bold">Contact me for a free consultation:</p>
       <ul className="flex flex-col md:w-1/3 ">
         <Link href="tel:416-879-8854">

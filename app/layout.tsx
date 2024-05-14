@@ -3,7 +3,8 @@ import "./globals.css";
 import { paragraphFont, titleFont } from "./fonts";
 import Navbar from "./_components/Header/Navbar";
 import Contact from "./_components/Contact";
-import Footer from "./_components/Footer/Footer"
+import Footer from "./_components/Footer/Footer";
+import ContactInfoBar from "./_components/Header/ContactInfoBar"
 
 
 export const metadata: Metadata = {
@@ -18,8 +19,9 @@ interface childrenProps {
 const RootLayout: React.FC<childrenProps> = ({ children }: childrenProps) => {
   return (
     <html lang="en">
-      <body className="bg-white-100">
-        <main className={`${titleFont.variable} ${paragraphFont.variable} h-screen`}>
+      <body className="bg-white-100 w-full h-screen">
+        <main className={`${titleFont.variable} ${paragraphFont.variable} margin-global relative`}>
+            <ContactInfoBar />
             <Navbar />
             {children}
             <Contact />

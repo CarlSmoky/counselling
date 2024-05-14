@@ -12,7 +12,7 @@ interface Props extends PropsWithChildren {
 
 const PageWrapper: React.FC<Props> = ({header, contents}) => {
   return (
-    <section className="margin-global page-min-h">
+    <section className="page-min-h">
       <div className="flex w-full h-[50px] mb-12 bg-grey-100 text-prime-100 font-bold text-xl" >
         <h2 className="mx-auto p-2">{toTitleCase(header)}</h2>
       </div>
