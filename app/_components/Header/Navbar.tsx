@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import NavLinks from "./NavLinks";
@@ -12,6 +12,23 @@ interface NavbarProp {
 
 const Navbar: React.FC<NavbarProp> = ({ top }) => {
   const [open, setOpen] = useState<boolean>(false);
+  const [shrink, setShrink] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (top > 20) {
+        setShrink(true);
+      } else {
+        setShrink(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [top]);
 
   const handleToggle = () => {
     setOpen(!open);
@@ -35,7 +52,7 @@ const Navbar: React.FC<NavbarProp> = ({ top }) => {
             <Image
               src={Logo}
               alt="Interactive Counseling Resource Logo"
-              className={`flex my-auto sm:cursor-pointer transition-all duration-300 ease-in-out ${top > 20 ? "w-[243px] md:w-[340px]" : "w-[182px] md:w-[255px]"}`}
+              className={`flex my-auto sm:cursor-pointer transition-all duration-300 ease-in-out ${shrink ? "w-[243px] md:w-[340px]" : "w-[182px] md:w-[255px]"}`}
               sizes="33vw"
               priority
             />
