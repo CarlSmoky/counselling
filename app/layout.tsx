@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { paragraphFont, titleFont } from "./fonts";
-import Navbar from "./_components/Header/Navbar";
 import Contact from "./_components/Contact";
 import Footer from "./_components/Footer/Footer";
 import ContactInfoBar from "./_components/Header/ContactInfoBar"
@@ -22,7 +21,6 @@ const RootLayout: React.FC<childrenProps> = ({ children }: childrenProps) => {
       <body className="bg-white-100 w-full h-screen">
         <main className={`${titleFont.variable} ${paragraphFont.variable} margin-global relative`}>
             <ContactInfoBar />
-            <Navbar />
             {children}
             <Contact />
             <Footer />

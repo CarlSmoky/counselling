@@ -6,7 +6,11 @@ import NavLinks from "./NavLinks";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Logo from "../../../public/logo.png"
 
-const Navbar: React.FC = () => {
+interface NavbarProp {
+  top: number;
+}
+
+const Navbar: React.FC<NavbarProp> = ({ top }) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const handleToggle = () => {
@@ -19,8 +23,8 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="sticky top-0 whitespace-nowrap text-prime-100 text-base xl:text-lg font-paragraph bg-white-100 z-10">
-      <div className="flex justify-between px-4 h-[80px] md:h-[120px] ">
-        <div className="w-full z-50 py-3 flex justify-between bg-white-100">
+      <div className="flex justify-between px-4 ">
+        <div className={`w-full z-50 py-3 flex justify-between bg-white-100`}>
           <Link
             href="/"
             onClick={() => {
@@ -31,7 +35,7 @@ const Navbar: React.FC = () => {
             <Image
               src={Logo}
               alt="Interactive Counseling Resource Logo"
-              className="flex my-auto sm:cursor-pointer w-[200px] md:w-[340px]"
+              className={`flex my-auto sm:cursor-pointer transition-all duration-300 ease-in-out ${top > 20 ? "w-[243px] md:w-[340px]" : "w-[182px] md:w-[255px]"}`}
               sizes="33vw"
               priority
             />
@@ -50,7 +54,7 @@ const Navbar: React.FC = () => {
         {/* Mobile nav */}
         <ul
           className={`
-        lg:hidden bg-white-100 fixed w-full top-0 overflow-y-auto bottom-0 pt-28
+        lg:hidden bg-white-100 fixed w-full top-0 overflow-y-auto bottom-0 pt-28 md:pt-36
         duration-500 ${open ? "left-0 z-30" : "left-[-100%] z-10"}
         `}
         >

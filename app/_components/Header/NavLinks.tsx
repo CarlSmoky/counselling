@@ -23,7 +23,7 @@ const NavLinks: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
           <li className="group text-left md:cursor-pointer">
             <Link onClick={clickHandler} href={link.link} prefetch={false}>
               <div
-                className={`flex px-8 py-7 align-baseline hover:text-grey-200 lg:px-2`}
+                className={`flex px-8 py-7 md:py-4 align-baseline hover:text-grey-200 lg:px-2`}
               >
                 {toTitleCase(link.name)}
                 {link.submenu && (
