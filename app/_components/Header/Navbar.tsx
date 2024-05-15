@@ -1,14 +1,34 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import NavLinks from "./NavLinks";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Logo from "../../../public/logo.png"
-import ContactInfoBar from "./ContactInfoBar"
 
-const Navbar: React.FC = () => {
+interface NavbarProp {
+  top: number;
+}
+
+const Navbar: React.FC<NavbarProp> = ({ top }) => {
   const [open, setOpen] = useState<boolean>(false);
+  const [shrink, setShrink] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (top > 20) {
+        setShrink(true);
+      } else {
+        setShrink(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [top]);
 
   const handleToggle = () => {
     setOpen(!open);
@@ -19,10 +39,9 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="margin-global  whitespace-nowrap text-prime-100 text-base xl:text-lg font-paragraph bg-white-100">
-      <ContactInfoBar />
-      <div className="flex justify-between px-4 h-[80px] md:h-[120px] ">
-        <div className="z-50 py-3 w-full flex justify-between">
+    <nav className="sticky top-0 whitespace-nowrap text-prime-100 text-base xl:text-lg font-paragraph bg-white-100 z-10">
+      <div className="flex justify-between px-4 ">
+        <div className={`w-full z-50 py-3 flex justify-between bg-white-100`}>
           <Link
             href="/"
             onClick={() => {
@@ -33,7 +52,7 @@ const Navbar: React.FC = () => {
             <Image
               src={Logo}
               alt="Interactive Counseling Resource Logo"
-              className="flex  my-auto sm:cursor-pointer w-[200px] md:w-[340px]"
+              className={`flex my-auto sm:cursor-pointer transition-all duration-300 ease-in-out ${shrink ? "w-[243px] md:w-[340px]" : "w-[182px] md:w-[255px]"}`}
               sizes="33vw"
               priority
             />
@@ -52,7 +71,7 @@ const Navbar: React.FC = () => {
         {/* Mobile nav */}
         <ul
           className={`
-        lg:hidden bg-white-100 fixed w-full top-0 overflow-y-auto bottom-0 py-24
+        lg:hidden bg-white-100 fixed w-full top-0 overflow-y-auto bottom-0 pt-28 md:pt-36
         duration-500 ${open ? "left-0 z-30" : "left-[-100%] z-10"}
         `}
         >
@@ -62,6 +81,7 @@ const Navbar: React.FC = () => {
           </ul>
         </ul>
       </div>
+      <div className="h-1 shadow-bottom-only"></div>
     </nav>
   );
 };

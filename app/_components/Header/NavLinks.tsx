@@ -2,9 +2,10 @@
 import React, { useState, Fragment } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LinkInfo, Sublink } from "../../types/types";
-import { navList } from "../../data/navList";
+import { LinkInfo, Sublink } from "../../_types/types";
+import { navList } from "../../_data/navList";
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
+import { toTitleCase } from "../../_util/textFormat";
 
 const NavLinks: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
   const [heading, setHeading] = useState<string>("");
@@ -22,9 +23,9 @@ const NavLinks: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
           <li className="group text-left md:cursor-pointer">
             <Link onClick={clickHandler} href={link.link} prefetch={false}>
               <div
-                className={`flex px-3 py-7 align-baseline hover:text-grey-200 lg:px-2`}
+                className={`flex px-8 py-7 md:py-4 align-baseline hover:text-grey-200 lg:px-2`}
               >
-                {link.name}
+                {toTitleCase(link.name)}
                 {link.submenu && (
                   <span
                     className="mx-4 inline px-2 text-2xl lg:hidden"

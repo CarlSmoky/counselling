@@ -26,6 +26,7 @@ const config: Config = {
       grey: {
         100: '#B4B4A6',
         200: '#9C9C8A',
+        300: '#F6F6F7'
       },
       red: {
         100: '#DF2935'
@@ -41,6 +42,9 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      boxShadow: {
+        'bottom-only': '0 4px 6px -1px rgba(0, 0, 0, 0.25)'
+      }
     },
   },
   plugins: [],

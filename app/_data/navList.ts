@@ -13,7 +13,12 @@ export const navList = [
   },
   {
     name: "specializations",
-    link: "/specializations",
+    link: "/specialties",
+    submenu: false
+  },
+  {
+    name: "workshops",
+    link: "/workshops",
     submenu: false
   },
   {
@@ -22,7 +27,7 @@ export const navList = [
     submenu: false
   },
   {
-    name: "About",
+    name: "about",
     link: "/about-bo-yih-thom",
     submenu: false
   }
