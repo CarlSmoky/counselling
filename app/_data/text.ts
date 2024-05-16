@@ -29,17 +29,17 @@ export const contents = {
         "Tapping"
       ],
       isItemsBold: true,
-      isBulletPoint: true
+      isBulletPoint: true,
+      hasSideComponents: true
     },
     {component: "paragraph",
-      title: "",
       paragraph : `I support individuals who are 18 years and older, couples, polycules, and families`
     }
   ],
   psychotherapy : [
     {
-      "component": "paragraph",
-      "paragraph": `Are you dealing with personal, work, or family stress? Living with intense or unexpressed emotions? Looking for a therapist who can explore and understand diversity? I support people to feel better – by working with you to make sense of challenging emotions, life experiences, and the impacts of systems of oppression, to understand and move past the patterns that keep you stuck, and to strengthen emotional bonds with yourself and others.`,
+      component: "paragraph",
+      paragraph: `Are you dealing with personal, work, or family stress? Living with intense or unexpressed emotions? Looking for a therapist who can explore and understand diversity? I support people to feel better – by working with you to make sense of challenging emotions, life experiences, and the impacts of systems of oppression, to understand and move past the patterns that keep you stuck, and to strengthen emotional bonds with yourself and others.`,
     },
     {
       component: "list",
@@ -244,4 +244,45 @@ export const contents = {
         I have a Masters of Social Work Degree from Wilfrid Laurier University.  I have been practicing psychotherapy since 2003.`
     }
   ]
+}
+
+export const data = {
+  home: [
+    { 
+      component: "paragraph",
+      paragraph: `Welcome!
+
+          I am a Registered Social Worker, Psychotherapist, and Clinical Supervisor. My practice is located in downtown Toronto, close to Lansdowne and Dundas West subway stations. I also offer online and phone sessions.
+
+          If you are interested in psychotherapy or clinical supervision that is based on racial liberation and anti-oppression principles, we could be a great match! 
+          
+          My style is warm, compassionate, and collaborative, with an aim to promote deep insight and practical skills to foster personal and professional growth.`
+    },
+    {
+      component: "list",
+      title: "I am skilled and experienced in the following short and long term therapy approaches:",
+      isTitleBold: false,
+      items: [
+        "Trauma Informed and Trauma Focused Psychotherapy",
+        "Humanistic Approaches: Feminist, Anti-Racist, QTBIPOC",
+        "Decolonized, holistic, body based, land based, and traditional healing methods",
+        "Parts Work",
+        "EMDR",
+        "Emotion Focused Therapy and 2 chair dialogues",
+        "Emotion Focused Couples Therapy",
+        "Mindfulness",
+        "Narrative",
+        "Grief and Non-Death Loss",
+        "Harm Reduction and Addictions",
+        "Tapping"
+      ],
+      isItemsBold: true,
+      isBulletPoint: true,
+      hasSideComponents: true
+    },
+    {component: "paragraph",
+      title: "",
+      paragraph : `I support individuals who are 18 years and older, couples, polycules, and families`
+    }
+  ],
 }

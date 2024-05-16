@@ -6,6 +6,7 @@ type ListProps = {
   isTitleBold?: boolean | false;
   isItemsBold?: boolean | false;
   isBulletPoint?: boolean | false;
+  hasSideComponents?: boolean | false;
 };
 
 

@@ -1,84 +1,73 @@
-"use client";
-import React, { useRef, useEffect, useState } from "react";
-import Navbar from "../_components/Header/Navbar";
+import React from "react";
+import ContentWithHeader from "./ContentWithHeader";
 import Paragraph from "../_components/Paragraph";
 import List from "../_components/List";
-import Quote from "./Quote";
+import Quote from "../_components/Quote";
+import PortraitImage from "../_components/PortraitImage";
 import type { PageInfo } from "../_types/types";
-import { toTitleCase } from "../_util/textFormat";
 
 interface PageWrapperProps {
   header: string;
-  contents: PageInfo[];
+  pageContents: PageInfo[];
 }
 
-interface ElementPosition {
-  top: number;
-}
-
-const PageWrapper: React.FC<PageWrapperProps> = ({ header, contents }) => {
-  const elementRef = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState<ElementPosition>({ top: 0});
-
-  const handleScroll = () => {
-    if (elementRef.current) {
-      const rect = elementRef.current.getBoundingClientRect();
-      setPosition({
-        top: rect.top
-      });
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial call to set position
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+const PageWrapper: React.FC<PageWrapperProps> = ({ header, pageContents }) => {
   return (
     <>
-      <Navbar top={position.top}/>
-      <section ref={elementRef} className="page-min-h">
-        <div className="mb-12 flex h-[50px] w-full bg-grey-100 text-xl font-bold text-prime-100">
-          <h2 className="mx-auto p-2">{toTitleCase(header)}</h2>
-        </div>
-        {contents.map((el: PageInfo, i: number) => {
-          if (el.component === "paragraph") {
-            return (
-              <React.Fragment key={i}>
-                <Paragraph
-                  subtitle={el.subtitle}
-                  isSubtitleBold={el.isSubtitleBold}
-                  paragraph={el.paragraph}
-                />
-              </React.Fragment>
-            );
-          }
-          if (el.component === "list") {
-            return (
-              <React.Fragment key={i}>
-                <List
-                  title={el.title}
-                  items={el.items}
-                  isItemsBold={el.isItemsBold}
-                  isTitleBold={el.isTitleBold}
-                  isBulletPoint={el.isBulletPoint}
-                />
-              </React.Fragment>
-            );
-          }
-          if (el.component === "quote") {
-            return (
-              <React.Fragment key={i}>
-                <Quote quote={el.quote} author={el.author} />
-              </React.Fragment>
-            );
-          }
-        })}
-      </section>
+      <ContentWithHeader header={header}>
+        <section className="page-min-h">
+          {pageContents.map((el: PageInfo, i: number) => {
+            if (el.component === "paragraph") {
+              return (
+                <React.Fragment key={i}>
+                  <Paragraph
+                    subtitle={el.subtitle}
+                    isSubtitleBold={el.isSubtitleBold}
+                    paragraph={el.paragraph}
+                  />
+                </React.Fragment>
+              );
+            }
+            if (el.component === "list" && el.hasSideComponents) {
+              return (
+                <div key={i} className="flex flex-col-reverse md:flex-row">
+                  <List
+                    title={el.title}
+                    items={el.items}
+                    isItemsBold={el.isItemsBold}
+                    isTitleBold={el.isTitleBold}
+                    isBulletPoint={el.isBulletPoint}
+                  />
+                  <PortraitImage
+                    src="/BoYihj_portlait.jpg"
+                    alt="BoYihj_portlait"
+                  />
+                </div>
+              );
+            }
+            if (el.component === "list" && !el.hasSideComponents) {
+              return (
+                <React.Fragment key={i}>
+                  <List
+                    title={el.title}
+                    items={el.items}
+                    isItemsBold={el.isItemsBold}
+                    isTitleBold={el.isTitleBold}
+                    isBulletPoint={el.isBulletPoint}
+                  />
+                </React.Fragment>
+              );
+            }
+            if (el.component === "quote") {
+              return (
+                <React.Fragment key={i}>
+                  <Quote quote={el.quote} author={el.author} />
+                </React.Fragment>
+              );
+            }
+          })}
+        </section>
+      </ContentWithHeader>
     </>
   );
 };

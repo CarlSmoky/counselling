@@ -19,10 +19,10 @@ export type PageInfo = {
   items?: string[];
   quote?: string;
   author?: string;
-  isTitleBold: boolean,
+  isTitleBold?: boolean,
   isItemsBold? : boolean;
   isBulletPoint?: boolean;
+  hasSideComponents?: boolean;
 }
 
 export type ComponentType = "paragraph" | "list" |"quote"
-
