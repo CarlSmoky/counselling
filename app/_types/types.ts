@@ -23,6 +23,7 @@ export type PageInfo = {
   isItemsBold? : boolean;
   isBulletPoint?: boolean;
   hasSideComponents?: boolean;
+  htmlString?: string;
 }
 
-export type ComponentType = "paragraph" | "list" |"quote"
+export type ComponentType = "paragraph" | "list" |"quote" | "HtmlContent"

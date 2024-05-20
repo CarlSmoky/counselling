@@ -84,10 +84,10 @@ export const contents = {
       isItemsBold: true,
     },
     {
-      component: "paragraph",
-      paragraph: `I am a registered mental health provider with the Non-Insured Health Benefits Program, which covers 15 sessions of crisis counselling to Indigenous people with a status card, and the Indian Residential Schools- Resolution Health Support Program, which covers ongoing counselling to residential school survivors and family members. 
+      component: "HtmlContent",
+      htmlString: `<p>I am a registered mental health provider with the <span class="font-bold">Non-Insured Health Benefits Program</span>, which covers 15 sessions of crisis counselling to Indigenous people with a status card, and the <span class="font-bold">Indian Residential Schools- Resolution Health Support Program</span>, which covers ongoing counselling to residential school survivors and family members. 
     
-      As a Registered Social Worker, my services are covered by the Medical Expense Tax Credit, some insurance plans, and may be eligible for coverage through the Non-Insured Health Benefits Program.  My services can also be claimed under plans that recognize Registered Psychotherapists and Registered Social Workers.`
+      As a Registered Social Worker, my services are covered by the Medical Expense Tax Credit, some insurance plans, and may be eligible for coverage through the Non-Insured Health Benefits Program.  My services can also be claimed under plans that recognize Registered Psychotherapists and Registered Social Workers.</p>`
     }
   ],
   specializations : [

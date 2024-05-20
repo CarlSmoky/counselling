@@ -1,6 +1,7 @@
 import React from "react";
 import ContentWithHeader from "./ContentWithHeader";
 import Paragraph from "../_components/Paragraph";
+import HtmlContent from "../_components/HtmlContent"
 import List from "../_components/List";
 import Quote from "../_components/Quote";
 import PortraitImage from "../_components/PortraitImage";
@@ -25,6 +26,13 @@ const PageWrapper: React.FC<PageWrapperProps> = ({ header, pageContents }) => {
                     isSubtitleBold={el.isSubtitleBold}
                     paragraph={el.paragraph}
                   />
+                </React.Fragment>
+              );
+            }
+            if (el.component === "HtmlContent") {
+              return (
+                <React.Fragment key={i}>
+                  <HtmlContent subtitle={el.subtitle} isSubtitleBold={el.isSubtitleBold} htmlString={el.htmlString} />
                 </React.Fragment>
               );
             }
