@@ -10,7 +10,7 @@ const Paragraph: React.FC<ParagraphProp> = ({ subtitle, isSubtitleBold, paragrap
   return (
     <div className="my-8">
       {subtitle && 
-        <h3 className={`${isSubtitleBold && "font-bold"} p-4`}>{subtitle}</h3>
+        <h2 className={`${isSubtitleBold && "font-bold"} p-4`}>{subtitle}</h2>
       }
       <p className="whitespace-pre-line px-4 leading-loose">{paragraph}</p>
     </div>

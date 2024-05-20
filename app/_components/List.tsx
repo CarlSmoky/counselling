@@ -16,7 +16,7 @@ const List:React.FC<ListProps> = ({ title, items, isTitleBold, isItemsBold, isBu
   return (
     <div className={`${isTitleBold && "font-bold"} leading-loose my-4 px-4`}>
       {title && (
-      <h3 className="my-4">{title}</h3>
+      <h2 className="my-4">{title}</h2>
       )}
       <ul>
         {items?.map((item, i) => (
