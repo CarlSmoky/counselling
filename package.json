@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/dompurify": "^3.0.5",
+    "dompurify": "^3.1.4",
     "next": "14.2.3",
     "plaiceholder": "^3.0.0",
     "react": "^18",
