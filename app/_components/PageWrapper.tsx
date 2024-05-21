@@ -16,7 +16,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({ header, pageContents }) => {
   return (
     <>
       <ContentWithHeader header={header}>
-        <section className="page-min-h">
+        <section className="page-min-h font-paragraph">
           {pageContents.map((el: PageInfo, i: number) => {
             if (el.component === "paragraph") {
               return (
