@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { paragraphFont, titleFont } from "./fonts";
 import Contact from "./_components/Contact";
-import Footer from "./_components/Footer/Footer";
+import Footer from "./_components/Footer";
 import ContactInfoBar from "./_components/Header/ContactInfoBar"
 
 
