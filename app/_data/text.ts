@@ -1,4 +1,4 @@
-import { PageType, PageKey } from "../_types/types"
+import { PageType } from "../_types/types"
 export const contents: PageType = {
   home : [
     { 
