@@ -1,4 +1,5 @@
-export const contents = {
+import { PageType, PageKey } from "../_types/types"
+export const contents: PageType = {
   home : [
     { 
       component: "paragraph",
@@ -84,13 +85,13 @@ export const contents = {
       isItemsBold: true,
     },
     {
-      component: "HtmlContent",
+      component: "htmlContent",
       htmlString: `<p>I am a registered mental health provider with the <span class="font-bold">Non-Insured Health Benefits Program</span>, which covers 15 sessions of crisis counselling to Indigenous people with a status card, and the <span class="font-bold">Indian Residential Schools- Resolution Health Support Program</span>, which covers ongoing counselling to residential school survivors and family members. 
     
       As a Registered Social Worker, my services are covered by the Medical Expense Tax Credit, some insurance plans, and may be eligible for coverage through the Non-Insured Health Benefits Program.  My services can also be claimed under plans that recognize Registered Psychotherapists and Registered Social Workers.</p>`
     }
   ],
-  specializations : [
+  specialties : [
     { 
       component: "paragraph",
       subtitle: "From Surviving to Thriving",
@@ -190,7 +191,7 @@ export const contents = {
       isItemsBold: true
     }
   ],
-  "clinical supervision" : [
+  "clinical-supervision" : [
     {
       component : "quote",
       quote : `
@@ -220,7 +221,7 @@ export const contents = {
         isItemsBold: true
     }
   ],
-  "about me" : [
+  "about-bo-yih-thom" : [
     {
       component : "paragraph",
       paragraph : `
@@ -236,7 +237,8 @@ export const contents = {
           "EMDR and traditional healing supervision from Shelley Spears Chief, MSW, RSW",
           "LGBTQ peer supervision group",
           "Peer supervision group for clinical supervisors"
-        ]
+        ],
+        isBulletPoint: true
     },
     {
       component : "paragraph",
@@ -285,4 +287,13 @@ export const data = {
       paragraph : `I support individuals who are 18 years and older, couples, polycules, and families`
     }
   ],
+}
+
+export const headers = {
+  home: "Bo Yih Thom, MSW, RSW",
+  psychotherapy: "psychotherapy",
+  specialties: "specializations",
+  workshops : "Workshops",
+  "clinical-supervision": "clinical supervision",
+  "about-bo-yih-thom": "About me",
 }

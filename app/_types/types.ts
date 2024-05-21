@@ -10,7 +10,7 @@ export type Sublink = {
   link: string;
 }
 
-export type PageInfo = {
+export type ContentType = {
   component: ComponentType;
   subtitle?: string;
   isSubtitleBold?: boolean;
@@ -26,4 +26,16 @@ export type PageInfo = {
   htmlString?: string;
 }
 
-export type ComponentType = "paragraph" | "list" |"quote" | "HtmlContent"
+export type ComponentType = "header" | "paragraph" | "list" |"quote" | "htmlContent"
+
+
+export type PageType = {
+  home: ContentType[];
+  psychotherapy: ContentType[];
+  specialties: ContentType[];
+  workshops: ContentType[];
+  "clinical-supervision" : ContentType[];
+  "about-bo-yih-thom": ContentType[];
+};
+
+export type PageKey = "home" | "psychotherapy" | "specialties" | "workshops" | "clinical-supervision" | "about-bo-yih-thom"

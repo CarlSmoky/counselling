@@ -5,11 +5,11 @@ import HtmlContent from "../_components/HtmlContent"
 import List from "../_components/List";
 import Quote from "../_components/Quote";
 import PortraitImage from "../_components/PortraitImage";
-import type { PageInfo } from "../_types/types";
+import type { ContentType } from "../_types/types";
 
 interface PageWrapperProps {
   header: string;
-  pageContents: PageInfo[];
+  pageContents: ContentType[];
 }
 
 const PageWrapper: React.FC<PageWrapperProps> = ({ header, pageContents }) => {
@@ -17,7 +17,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({ header, pageContents }) => {
     <>
       <ContentWithHeader header={header}>
         <section className="page-min-h font-paragraph">
-          {pageContents.map((el: PageInfo, i: number) => {
+          {pageContents.map((el: ContentType, i: number) => {
             if (el.component === "paragraph") {
               return (
                 <React.Fragment key={i}>
@@ -29,7 +29,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({ header, pageContents }) => {
                 </React.Fragment>
               );
             }
-            if (el.component === "HtmlContent") {
+            if (el.component === "htmlContent") {
               return (
                 <React.Fragment key={i}>
                   <HtmlContent subtitle={el.subtitle} isSubtitleBold={el.isSubtitleBold} htmlString={el.htmlString} />
