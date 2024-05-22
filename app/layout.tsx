@@ -7,9 +7,14 @@ import ContactInfoBar from "./_components/Header/ContactInfoBar"
 
 
 export const metadata: Metadata = {
-  title: "Integrative Counselling Resources",
-  description: "Registered Social Worker, Psychotherapist, and Clinical Supervisor that is based on racial liberation and anti-oppression principles in downtown Toronto",
+  title: {
+    default: "Integrative Counselling Resources",
+    template: "%s | Integrative Counselling Resources",
+  },
+  description: "Hi! I am Bo Yih Thom, Registered Social Worker, Psychotherapist, and Clinical Supervisor that is based on racial liberation and anti-oppression principles in Toronto",
 };
+
+
 
 interface childrenProps {
   children: React.ReactNode;
