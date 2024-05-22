@@ -13,9 +13,9 @@ const PortraitImage: React.FC<Props> = async ({ src, alt }: Props) => {
   const { base64 } = await getPlaiceholder(buffer);
   return (
     <div className="flex w-full sm:w-1/2 md:mt-0 md:w-1/3 m-auto">
-      <div className="flex flex-col bg-grey-300 mt-8 m-auto rounded-lg">
+      <div className="flex flex-col mt-8 m-auto p-4 bg-grey-300  rounded-lg ">
         <Image
-          className="object-contain m-auto p-4"
+          className="object-contain m-auto"
           src={src}
           alt={alt}
           width={240}
