@@ -21,7 +21,7 @@ const NavLinks: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
       {navList.map((link: LinkInfo, i) => (
         <Fragment key={i}>
           <li className="group text-left md:cursor-pointer">
-            <Link onClick={clickHandler} href={link.link} prefetch={false}>
+            <Link onClick={clickHandler} href={link.link}>
               <div
                 className={`flex px-8 py-7 md:py-4 align-baseline hover:text-grey-200 lg:px-2`}
               >
@@ -54,7 +54,7 @@ const NavLinks: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 <div className="absolute top-20 z-10 hidden hover:lg:block group-hover:lg:block">
                   <ul className="grid grid-cols-3 rounded-sm bg-prime-100 px-5 ">
                     {link.sublinks?.map((slink: Sublink, i) => (
-                      <Link key={i} href={slink.link} prefetch={false}>
+                      <Link key={i} href={slink.link}>
                         <li className="my-2.5 text-sm transition-all duration-300 ease-in-out hover:text-grey-200">
                           {slink.name}
                         </li>
@@ -77,7 +77,6 @@ const NavLinks: React.FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 key={i}
                 onClick={clickHandler}
                 href={slinks.link}
-                prefetch={false}
               >
                 <li className="py-3 pl-14 text-sm transition-all duration-300 ease-in-out hover:text-black-100">
                   {slinks.name}
