@@ -1,4 +1,4 @@
-import { PageType } from "../_types/types"
+import { PageType, MetadataType } from "../_types/types"
 export const contents: PageType = {
   home : [
     { 
@@ -34,7 +34,7 @@ export const contents: PageType = {
       hasSideComponents: true
     },
     {component: "paragraph",
-      paragraph : `I support individuals who are 18 years and older, couples, polycules, and families`
+      paragraph : `I support individuals who are 18 years and older, couples, polycules, and families.`
     }
   ],
   psychotherapy : [
@@ -289,11 +289,20 @@ export const data = {
   ],
 }
 
-export const headers = {
+export const headers: MetadataType = {
   home: "Bo Yih Thom, MSW, RSW",
   psychotherapy: "psychotherapy",
   specialties: "specializations",
   workshops : "Workshops",
   "clinical-supervision": "clinical supervision",
   "about-bo-yih-thom": "About me",
+}
+
+export const metadataDescription: MetadataType = {
+  home: "Bo Yih Thom, MSW, RSW",
+  psychotherapy: "My practice is QTBIPOC a positive, welcoming individuals, and couples in multiple love, open, and monogamous relationships.",
+  specialties: "From Surviving to Thriving ,Relationships and Sexuality ,Mindfulness ,Substance Use",
+  workshops : "The intersections of class, race, gender and sexual diversity, centre anti-oppression, racial liberation to other professional groups including health care workers, educators, advocates, and unions",
+  "clinical-supervision": "Clinical supervision is available to CRPO Qualifying Members, Social Workers and Psychotherapists in private practice, and to front line workers in agency settings",
+  "about-bo-yih-thom": "My psychotherapy and supervision practices are supported by a vision for social healing and transformation, regular mindfulness and land based practices, and ongoing professional development"
 }

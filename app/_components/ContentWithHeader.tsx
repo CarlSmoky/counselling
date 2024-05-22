@@ -36,8 +36,8 @@ const ContentWithHeader:React.FC<PageWrapperProps> = ({ header, children }) => {
     <>
       <Navbar top={position.top}/>
       <div ref={elementRef} className="page-min-h">
-        <div className="mb-12 flex h-[50px] w-full bg-grey-100 text-xl font-bold text-prime-100 font-title">
-          <h1 className="mx-auto p-2 font-title">{toTitleCase(header)}</h1>
+        <div className="mb-12 flex h-[45px] md:h-[55px] w-full bg-grey-100 ">
+          <h1 className="m-auto p-2 font-title text-xl md:text-2xl font-bold text-prime-100">{toTitleCase(header)}</h1>
         </div>
         {children}
       </ div>

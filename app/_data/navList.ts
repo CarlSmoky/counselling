@@ -27,7 +27,7 @@ export const navList: LinkInfo[] = [
     submenu: false
   },
   {
-    name: "about",
+    name: "about me",
     link: "/about-bo-yih-thom",
     submenu: false
   }
