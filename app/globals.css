@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* styles/globals.css */
+html {
+  scroll-behavior: smooth;
+}
+
+
 @layer utilities {
   .margin-global {
     @apply lg:mx-20 xl:mx-36

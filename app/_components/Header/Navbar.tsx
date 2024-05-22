@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import NavLinks from "./NavLinks";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Logo from "../../../public/logo.png"
+import NavLinks from "./NavLinks";
 
 interface NavbarProp {
   top: number;
@@ -39,9 +39,9 @@ const Navbar: React.FC<NavbarProp> = ({ top }) => {
   };
 
   return (
-    <nav className="sticky top-0 whitespace-nowrap text-prime-100 text-base xl:text-lg font-paragraph bg-white-100 z-10">
-      <div className="flex justify-between px-4 ">
-        <div className={`w-full z-50 py-3 flex justify-between bg-white-100`}>
+    <nav className="sticky top-0 whitespace-nowrap text-prime-100 text-base xl:text-lg font-paragraph z-10 bg-white-100">
+      <div className="flex justify-between px-4">
+        <div className={`w-full z-50 py-3 flex justify-between `}>
           <Link
             href="/"
             onClick={() => {
@@ -71,8 +71,8 @@ const Navbar: React.FC<NavbarProp> = ({ top }) => {
         {/* Mobile nav */}
         <ul
           className={`
-        lg:hidden bg-white-100 fixed w-full top-0 overflow-y-auto bottom-0 pt-28 md:pt-36
-        duration-500 ${open ? "left-0 z-30" : "left-[-100%] z-10"}
+        lg:hidden bg-grey-300 fixed w-full top-0 overflow-y-auto bottom-0 pt-28 md:pt-36
+        duration-300 ${open ? "left-0 z-30" : "left-[-100%] z-10"}
         `}
         >
           <NavLinks onToggle={handleToggle} />
