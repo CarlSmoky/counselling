@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import NavLinks from "./NavLinks";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Logo from "../../../public/logo.png"
+import NavLinks from "./NavLinks";
 
 interface NavbarProp {
   top: number;
@@ -72,7 +72,7 @@ const Navbar: React.FC<NavbarProp> = ({ top }) => {
         <ul
           className={`
         lg:hidden bg-grey-300 fixed w-full top-0 overflow-y-auto bottom-0 pt-28 md:pt-36
-        duration-1000 ${open ? "left-0 z-30" : "left-[-100%] z-10"}
+        duration-300 ${open ? "left-0 z-30" : "left-[-100%] z-10"}
         `}
         >
           <NavLinks onToggle={handleToggle} />
