@@ -28,6 +28,7 @@ export type ContentType = {
 
 export type ComponentType = "header" | "paragraph" | "list" |"quote" | "htmlContent"
 
+export type PageKey = "home" | "psychotherapy" | "specialties" | "workshops" | "clinical-supervision" | "about-bo-yih-thom"
 
 export type PageType = {
   home: ContentType[];
@@ -38,4 +39,11 @@ export type PageType = {
   "about-bo-yih-thom": ContentType[];
 };
 
-export type PageKey = "home" | "psychotherapy" | "specialties" | "workshops" | "clinical-supervision" | "about-bo-yih-thom"
+export type MetadataType = {
+  home: string;
+  psychotherapy: string;
+  specialties: string;
+  workshops: string;
+  "clinical-supervision" : string;
+  "about-bo-yih-thom": string;
+};

@@ -1,13 +1,14 @@
 import React from "react";
+import type { Metadata } from "next";
 import PageWrapper from "./_components/PageWrapper";
 import { contents } from "./_data/text";
-import type { PageInfo } from "./_types/types";
+import type { ContentType } from "./_types/types";
 
 const page = "home";
 const header = "Bo Yih Thom, MSW, RSW";
 
 const homePage = () => {
-  const pageData: PageInfo[] = contents[page] as PageInfo[];
+  const pageData: ContentType[] = contents[page] as ContentType[];
 
   return (
     <>
