@@ -9,20 +9,23 @@ interface Props {
 }
 
 const PortraitImage: React.FC<Props> = async ({ src, alt }: Props) => {
-
   const buffer = await fs.readFile(`./public/${src}`);
   const { base64 } = await getPlaiceholder(buffer);
   return (
-    <div className="w-2/3 sm:w-1/2 md:w-1/3 aspect-square m-auto md:mt-0 relative">
-      <Image
-        className="object-cover rounded-full md:rounded-none"
-        src={src}
-        alt={alt}
-        fill={true}
-        sizes="(max-width: 480px) 66vw, (max-width: 768px) 50vw, 33vw"
-        placeholder="blur"
-        blurDataURL={base64}
-      />
+    <div className="flex w-full sm:w-1/2 md:mt-0 md:w-1/3 m-auto">
+      <div className="flex flex-col mt-8 m-auto p-4 bg-grey-300  rounded-lg ">
+        <Image
+          className="object-contain m-auto"
+          src={src}
+          alt={alt}
+          width={240}
+          height={300}
+          sizes="(max-width: 480px) 66vw, (max-width: 768px) 50vw, 33vw"
+          placeholder="blur"
+          blurDataURL={base64}
+        />
+        <p className="text-center text-sm text-black-100/60 p-3">Bo Yih Thom <br/>(Photo by Shandra Spears Bombay)</p>
+      </div>
     </div>
   );
 };

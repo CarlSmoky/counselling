@@ -1,6 +1,6 @@
-// import { LinkInfo } from "../types/types"
+import { LinkInfo } from "../_types/types"
 
-export const navList = [
+export const navList: LinkInfo[] = [
   {
     name: "home",
     link: "/",
@@ -27,7 +27,7 @@ export const navList = [
     submenu: false
   },
   {
-    name: "about",
+    name: "about me",
     link: "/about-bo-yih-thom",
     submenu: false
   }

@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 
+
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -33,8 +34,8 @@ const config: Config = {
       }
     },
     fontFamily: {
-      title: ['var(--font-titleFont)', 'san-serif'],
-      paragraph: ['var(--font-paragraphFont)', 'san-serif'],
+      title: ['var(--font-titleFont)', 'Calibri', 'Candara', "Arial",'san-serif'],
+      paragraph: ['var(--font-paragraphFont)', 'Calibri', 'Candara', "Arial",'san-serif'],
     },
     extend: {
       backgroundImage: {

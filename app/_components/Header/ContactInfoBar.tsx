@@ -7,7 +7,7 @@ const ContactInfoBar = () => {
   return (
     <div className="h-9 px-4 bg-prime-100 text-white-100">
       <div className="flex h-full">
-        <ul className="flex flex-row my-auto">
+        <ul className="flex flex-row my-auto font-paragraph">
           <Link href="tel:416-879-8854">
             <li className="flex"><FaPhone size={18}/>&nbsp;&nbsp;416-879-8854</li>
           </Link>
