@@ -1,37 +1,44 @@
+import React, { Suspense } from "react";
+import fs from "node:fs/promises";
 import type { Metadata } from "next";
+import type { PageKey, ContentType, MetadataAttributeType } from "../_types/types";
+import { matadataTest } from "../_data/metadata"
 import PageWrapper from "../_components/PageWrapper";
-import { contents, headers, metadataDescription } from "../_data/text";
-import { ContentType, PageKey } from "../_types/types"
-import PageNotFound from "../_components/PageNotFound"
-
+import PageNotFound from "../_components/PageNotFound";
+import Loading from "../_components/Loading";
 
 type Props = {
   params: { pages: PageKey };
 };
 
-export const generateMetadata = async({ params }: Props): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
   const param = params.pages;
-  const title: string = headers[param] as string;
-  const description: string = metadataDescription[param] as string;
-  return {
-    title: title,
-    description: description
-  };
-}
-
-const Page = ({ params }: Props) => {
-  const param = params.pages;
-  const pageData: ContentType[] = contents[param] as ContentType[];
-  const header: string = headers[param] as string;
   
-  if (!pageData) 
-    return <PageNotFound/>;
+  const pageMetadata: MetadataAttributeType = matadataTest[param];
+
+  return {
+    title: pageMetadata.title,
+    description: pageMetadata.description,
+  };
+};
+
+const Page = async ({ params }: Props) => {
+  const param = params.pages;
+  
+  const metadataFile = await fs.readFile(process.cwd() + "/app/_data/metadata.json","utf8");
+  const pageMetadata: MetadataAttributeType = JSON.parse(metadataFile)[param];
+  const header: string = pageMetadata.title;
+
+  const contentFile = await fs.readFile(process.cwd() + "/app/_data/content.json","utf8");
+  const pageContents: ContentType[] = JSON.parse(contentFile)[param];
+
+  if (!pageContents) return <PageNotFound />;
 
   return (
-    <>
-      <PageWrapper header={header} pageContents={pageData} />
-    </>
-  )
-}
+      <Suspense fallback={<Loading/>}>
+        <PageWrapper header={header} pageContents={pageContents} />
+      </Suspense>
+  );
+};
 
-export default Page
+export default Page;
