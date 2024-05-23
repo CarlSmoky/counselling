@@ -6,29 +6,27 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Logo from "../../../public/logo.png"
 import NavLinks from "./NavLinks";
 
-interface NavbarProp {
-  top: number;
-}
 
-const Navbar: React.FC<NavbarProp> = ({ top }) => {
+
+const Navbar: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
-  const [shrink, setShrink] = useState(true);
+  const [shrink, setShrink] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (top > 20) {
+    const toggleVisibility = () => {
+      if (window.scrollY > 100) {
         setShrink(true);
       } else {
         setShrink(false);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', toggleVisibility);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', toggleVisibility);
     };
-  }, [top]);
+  }, []);
 
   const handleToggle = () => {
     setOpen(!open);
@@ -52,7 +50,7 @@ const Navbar: React.FC<NavbarProp> = ({ top }) => {
             <Image
               src={Logo}
               alt="Interactive Counseling Resource Logo"
-              className={`flex my-auto sm:cursor-pointer transition-all duration-300 ease-in-out ${shrink ? "w-[243px] md:w-[340px]" : "w-[182px] md:w-[255px]"}`}
+              className={`flex my-auto sm:cursor-pointer transition-all duration-300 ease-in-out ${shrink ? "w-[182px] md:w-[255px]" : "w-[243px] md:w-[340px]"}`}
               sizes="33vw"
               priority
             />
