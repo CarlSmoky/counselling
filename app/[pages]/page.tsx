@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import fs from "node:fs/promises";
 import type { Metadata } from "next";
 import type { PageKey, ContentType, MetadataAttributeType } from "../_types/types";
-import { matadataTest } from "../_data/metadata"
+import { matadataTest } from "../_data/metadata";
 import PageWrapper from "../_components/PageWrapper";
 import PageNotFound from "../_components/PageNotFound";
 import Loading from "../_components/Loading";
