@@ -1,19 +1,20 @@
 import React from "react";
 import Image from "next/image";
-import { getPlaiceholder } from "plaiceholder";
 import fs from "node:fs/promises";
+import { getPlaiceholder } from "plaiceholder";
 
-interface Props {
+type PortraitImageProps = {
   src: string;
   alt: string;
 }
 
-const PortraitImage: React.FC<Props> = async ({ src, alt }: Props) => {
+const PortraitImage: React.FC<PortraitImageProps> = async ({ src, alt }) => {
   const buffer = await fs.readFile(`./public/${src}`);
   const { base64 } = await getPlaiceholder(buffer);
+
   return (
     <div className="flex w-full sm:w-1/2 md:mt-0 md:w-1/3 m-auto">
-      <div className="flex flex-col mt-8 m-auto p-4 bg-grey-300  rounded-lg ">
+      <div className="flex flex-col mt-8 m-auto p-4 bg-grey-300 rounded-lg ">
         <Image
           className="object-contain m-auto"
           src={src}
