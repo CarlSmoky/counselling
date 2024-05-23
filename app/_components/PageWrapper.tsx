@@ -7,7 +7,7 @@ import Quote from "../_components/Quote";
 import PortraitImage from "../_components/PortraitImage";
 import type { ContentType } from "../_types/types";
 
-interface PageWrapperProps {
+type PageWrapperProps = {
   header: string;
   pageContents: ContentType[];
 }
@@ -36,7 +36,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({ header, pageContents }) => {
                 </React.Fragment>
               );
             }
-            if (el.component === "list" && el.hasSideComponents) {
+            if (el.component === "list" && el.hasSideComponent) {
               return (
                 <div key={i} className="flex flex-col-reverse md:flex-row">
                   <List
@@ -53,7 +53,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({ header, pageContents }) => {
                 </div>
               );
             }
-            if (el.component === "list" && !el.hasSideComponents) {
+            if (el.component === "list" && !el.hasSideComponent) {
               return (
                 <React.Fragment key={i}>
                   <List

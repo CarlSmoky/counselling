@@ -22,7 +22,7 @@ export type ContentType = {
   isTitleBold?: boolean,
   isItemsBold? : boolean;
   isBulletPoint?: boolean;
-  hasSideComponents?: boolean;
+  hasSideComponent?: boolean;
   htmlString?: string;
 }
 
@@ -39,11 +39,16 @@ export type PageType = {
   "about-bo-yih-thom": ContentType[];
 };
 
+export type MetadataAttributeType = {
+  title: string;
+  description: string;
+}
+
 export type MetadataType = {
-  home: string;
-  psychotherapy: string;
-  specialties: string;
-  workshops: string;
-  "clinical-supervision" : string;
-  "about-bo-yih-thom": string;
+  home: MetadataAttributeType;
+  psychotherapy: MetadataAttributeType;
+  specialties: MetadataAttributeType;
+  workshops: MetadataAttributeType;
+  "clinical-supervision" : MetadataAttributeType;
+  "about-bo-yih-thom": MetadataAttributeType;
 };
