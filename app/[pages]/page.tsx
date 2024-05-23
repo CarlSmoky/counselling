@@ -25,8 +25,7 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
 const Page = async ({ params }: Props) => {
   const param = params.pages;
   
-  const metadataFile = await fs.readFile(process.cwd() + "/app/_data/metadata.json","utf8");
-  const pageMetadata: MetadataAttributeType = JSON.parse(metadataFile)[param];
+  const pageMetadata: MetadataAttributeType = matadataTest[param];
   const header: string = pageMetadata.title;
 
   const contentFile = await fs.readFile(process.cwd() + "/app/_data/content.json","utf8");
