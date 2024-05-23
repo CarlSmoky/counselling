@@ -3,6 +3,7 @@ import fs from "node:fs/promises";
 import type { Metadata } from "next";
 import type { PageKey, ContentType, MetadataAttributeType } from "../_types/types";
 import { matadataTest } from "../_data/metadata";
+import { contentTest } from "../_data/content";
 import PageWrapper from "../_components/PageWrapper";
 import PageNotFound from "../_components/PageNotFound";
 import Loading from "../_components/Loading";
@@ -28,8 +29,7 @@ const Page = async ({ params }: Props) => {
   const pageMetadata: MetadataAttributeType = matadataTest[param];
   const header: string = pageMetadata.title;
 
-  const contentFile = await fs.readFile(process.cwd() + "/app/_data/content.json","utf8");
-  const pageContents: ContentType[] = JSON.parse(contentFile)[param];
+  const pageContents: ContentType[] = contentTest[param] as ContentType[];
 
   if (!pageContents) return <PageNotFound />;
 
