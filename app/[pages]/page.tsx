@@ -12,7 +12,7 @@ type Props = {
 
 export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
   const param = params.pages;
-  const metadataFile = await fs.readFile("app/_data/metadata.json","utf8");
+  const metadataFile = await fs.readFile("./public/metadata.json","utf8");
   const pageMetadata: MetadataAttributeType = JSON.parse(metadataFile)[param];
 
   return {
@@ -24,11 +24,11 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
 const Page = async ({ params }: Props) => {
   const param = params.pages;
   
-  const metadataFile = await fs.readFile("app/_data/metadata.json","utf8");
+  const metadataFile = await fs.readFile("./public/metadata.json","utf8");
   const pageMetadata: MetadataAttributeType = JSON.parse(metadataFile)[param];
   const header: string = pageMetadata.title;
 
-  const contentFile = await fs.readFile("app/_data/content.json","utf8");
+  const contentFile = await fs.readFile("./public/content.json","utf8");
   const pageContents: ContentType[] = JSON.parse(contentFile)[param];
 
 
