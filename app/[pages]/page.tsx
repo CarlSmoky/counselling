@@ -2,8 +2,6 @@ import React, { Suspense } from "react";
 import fs from "node:fs/promises";
 import type { Metadata } from "next";
 import type { PageKey, ContentType, MetadataAttributeType } from "../_types/types";
-import { matadataTest } from "../_data/metadata";
-import { contentTest } from "../_data/content";
 import PageWrapper from "../_components/PageWrapper";
 import PageNotFound from "../_components/PageNotFound";
 import Loading from "../_components/Loading";
@@ -14,8 +12,8 @@ type Props = {
 
 export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
   const param = params.pages;
-  
-  const pageMetadata: MetadataAttributeType = matadataTest[param];
+  const metadataFile = await fs.readFile("app/_data/metadata.json","utf8");
+  const pageMetadata: MetadataAttributeType = JSON.parse(metadataFile)[param];
 
   return {
     title: pageMetadata.title,
@@ -26,10 +24,13 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
 const Page = async ({ params }: Props) => {
   const param = params.pages;
   
-  const pageMetadata: MetadataAttributeType = matadataTest[param];
+  const metadataFile = await fs.readFile("app/_data/metadata.json","utf8");
+  const pageMetadata: MetadataAttributeType = JSON.parse(metadataFile)[param];
   const header: string = pageMetadata.title;
 
-  const pageContents: ContentType[] = contentTest[param] as ContentType[];
+  const contentFile = await fs.readFile("app/_data/content.json","utf8");
+  const pageContents: ContentType[] = JSON.parse(contentFile)[param];
+
 
   if (!pageContents) return <PageNotFound />;
 
