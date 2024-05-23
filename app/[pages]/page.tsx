@@ -10,16 +10,16 @@ type Props = {
   params: { pages: PageKey };
 };
 
-export const generateMetadata = async ({params,}: Props): Promise<Metadata> => {
-  const param = params.pages;
-  const file = await fs.readFile(process.cwd() + "/app/_data/metadata.json","utf8");
-  const pageMetadata: MetadataAttributeType = JSON.parse(file)[param];
+// export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
+//   const param = params.pages;
+//   const file = await fs.readFile(process.cwd() + "/app/_data/metadata.json","utf8");
+//   const pageMetadata: MetadataAttributeType = JSON.parse(file)[param];
 
-  return {
-    title: pageMetadata.title,
-    description: pageMetadata.description,
-  };
-};
+//   return {
+//     title: pageMetadata.title,
+//     description: pageMetadata.description,
+//   };
+// };
 
 const Page = async ({ params }: Props) => {
   const param = params.pages;
