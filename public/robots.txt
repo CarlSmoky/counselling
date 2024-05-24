@@ -1,9 +1,9 @@
 User-agent: *
-Allow: /app/
-Disallow: /app/_components/
-Disallow: /app/_data/
-Disallow: /app/_types/
-Disallow: /app/_util/
+Allow: /
+Disallow: /_components/
+Disallow: /_data/
+Disallow: /_types/
+Disallow: /_util/
 
 Sitemap: https://integrativecounsellingresources.com/
 Sitemap: https://integrativecounsellingresources.com/psychotherapy/
