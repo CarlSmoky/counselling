@@ -34,7 +34,6 @@ const Page = async ({ params }: Props) => {
 
   const contentPath = path.join(process.cwd(), '/app/_data/content.json');
   const contentFile = await fs.readFile(contentPath, "utf8");
-
   const pageContents: ContentType[] = JSON.parse(contentFile)[param];
 
 

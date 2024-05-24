@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import fs from "node:fs/promises";
+import path from 'path';
 import type { Metadata } from "next";
 import type { ContentType, MetadataAttributeType } from "./_types/types";
 import PageWrapper from "./_components/PageWrapper";
@@ -9,21 +10,24 @@ import Loading from "./_components/Loading";
 const param = "home";
 
 export const generateMetadata = async (): Promise<Metadata> => {
-  const file = await fs.readFile(process.cwd() + "/app/_data/metadata.json","utf8");
-  const pageMetadata: MetadataAttributeType = JSON.parse(file)[param];
+  const metadataPath = path.join(process.cwd(), '/app/_data/metadata.json');
+  const metadataFile = await fs.readFile(metadataPath, "utf8");
+  const metadata: MetadataAttributeType = JSON.parse(metadataFile)[param];
 
   return {
-    title: pageMetadata.title,
-    description: pageMetadata.description,
+    title: metadata.title,
+    description: metadata.description,
   };
 };
 
 const homePage = async () => {
-  const metadataFile = await fs.readFile(process.cwd() + "/app/_data/metadata.json","utf8");
-  const pageMetadata: MetadataAttributeType = JSON.parse(metadataFile)[param];
-  const header: string = pageMetadata.title;
+  const metadataPath = path.join(process.cwd(), '/app/_data/metadata.json');
+  const metadataFile = await fs.readFile(metadataPath, "utf8");
+  const metadata: MetadataAttributeType = JSON.parse(metadataFile)[param];
+  const header: string = metadata.title;
 
-  const contentFile = await fs.readFile(process.cwd() + "/app/_data/content.json","utf8");
+  const contentPath = path.join(process.cwd(), '/app/_data/content.json');
+  const contentFile = await fs.readFile(contentPath, "utf8");
   const pageContents: ContentType[] = JSON.parse(contentFile)[param];
 
   if (!pageContents) return <PageNotFound />;
