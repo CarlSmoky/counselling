@@ -12,7 +12,11 @@ export const metadata: Metadata = {
   title: {
     default: "Integrative Counselling Resources",
     template: "%s | Integrative Counselling Resources",
-  }
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 interface childrenProps {
