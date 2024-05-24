@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
         {/* Mobile nav */}
         <ul
           className={`
-        lg:hidden bg-grey-300 fixed w-full top-0 overflow-y-auto bottom-0 pt-28 md:pt-36 text-base
+        lg:hidden bg-grey-300 fixed w-full top-0 overflow-y-auto bottom-0 pt-28 md:pt-36 text-base md:text-xl
         duration-300 ${open ? "left-0 z-30" : "left-[-100%] z-10"}
         `}
         >
