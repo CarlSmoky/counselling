@@ -1,19 +1,42 @@
-import React from "react";
+import React, { Suspense } from "react";
+import fs from "node:fs/promises";
+import path from 'path';
 import type { Metadata } from "next";
+import type { ContentType, MetadataAttributeType } from "./_types/types";
 import PageWrapper from "./_components/PageWrapper";
-import { contents } from "./_data/text";
-import type { ContentType } from "./_types/types";
+import PageNotFound from "./_components/PageNotFound";
+import Loading from "./_components/Loading";
 
-const page = "home";
-const header = "Bo Yih Thom, MSW, RSW";
+const param = "home";
 
-const homePage = () => {
-  const pageData: ContentType[] = contents[page] as ContentType[];
+export const generateMetadata = async (): Promise<Metadata> => {
+  const metadataPath = path.join(process.cwd(), '/app/_data/metadata.json');
+  const metadataFile = await fs.readFile(metadataPath, "utf8");
+  const metadata: MetadataAttributeType = JSON.parse(metadataFile)[param];
+
+  return {
+    title: metadata.title,
+    description: metadata.description,
+  };
+};
+
+const homePage = async () => {
+  const metadataPath = path.join(process.cwd(), '/app/_data/metadata.json');
+  const metadataFile = await fs.readFile(metadataPath, "utf8");
+  const metadata: MetadataAttributeType = JSON.parse(metadataFile)[param];
+  const header: string = metadata.title;
+
+  const contentPath = path.join(process.cwd(), '/app/_data/content.json');
+  const contentFile = await fs.readFile(contentPath, "utf8");
+  const pageContents: ContentType[] = JSON.parse(contentFile)[param];
+
+  if (!pageContents) return <PageNotFound />;
+
 
   return (
-    <>
-      <PageWrapper header={header} pageContents={pageData} />
-    </>
+    <Suspense fallback={<Loading/>}>
+      <PageWrapper header={header} pageContents={pageContents} />
+    </Suspense>
   );
 };
 
