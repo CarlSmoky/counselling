@@ -62,21 +62,17 @@ const Navbar: React.FC = () => {
             {open ? <AiOutlineClose /> : <AiOutlineMenu />}
           </div>
         </div>
-        <ul className="hidden lg:flex items-center">
+        <ul className="hidden lg:flex items-center text-sm xl:text-base">
           <NavLinks onToggle={handleToggle} />
-          
         </ul>
         {/* Mobile nav */}
         <ul
           className={`
-        lg:hidden bg-grey-300 fixed w-full top-0 overflow-y-auto bottom-0 pt-28 md:pt-36
+        lg:hidden bg-grey-300 fixed w-full top-0 overflow-y-auto bottom-0 pt-28 md:pt-36 text-base
         duration-300 ${open ? "left-0 z-30" : "left-[-100%] z-10"}
         `}
         >
           <NavLinks onToggle={handleToggle} />
-          <ul className="flex justify-center">
-            
-          </ul>
         </ul>
       </div>
       <div className="h-1 shadow-bottom-only"></div>
