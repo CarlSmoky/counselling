@@ -9,8 +9,6 @@ type ListProps = {
   hasSideComponents?: boolean | false;
 };
 
-
-
 const List:React.FC<ListProps> = ({ title, items, isTitleBold, isItemsBold, isBulletPoint }) => {
 
   return (
