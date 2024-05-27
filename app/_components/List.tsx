@@ -20,7 +20,7 @@ const List:React.FC<ListProps> = ({ title, items, isTitleBold, isItemsBold, isBu
       )}
       <ul>
         {items?.map((item, i) => (
-          <li key={i} className={`${isItemsBold && "font-bold"} ${isBulletPoint && "list-disc list-inside"} py-1`}>
+          <li key={i} className={`${isItemsBold && "font-bold"} ${isBulletPoint ? "list-disc list-inside" : "ml-2"} py-1`}>
             {item}
           </li>
         ))}
