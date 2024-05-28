@@ -1,32 +1,15 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Logo from "../../../public/logo.png"
 import NavLinks from "./NavLinks";
-
-
+import { useScroll } from "../../_hooks/useScroll";
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
-  const [shrink, setShrink] = useState(false);
-
-  useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.scrollY > 100) {
-        setShrink(true);
-      } else {
-        setShrink(false);
-      }
-    };
-
-    window.addEventListener('scroll', toggleVisibility);
-
-    return () => {
-      window.removeEventListener('scroll', toggleVisibility);
-    };
-  }, []);
+  const isScrolled = useScroll();
 
   const handleToggle = () => {
     setOpen(!open);
@@ -50,7 +33,7 @@ const Navbar: React.FC = () => {
             <Image
               src={Logo}
               alt="Interactive Counseling Resource Logo"
-              className={`flex my-auto sm:cursor-pointer transition-all duration-300 ease-in-out ${shrink ? "w-[182px] md:w-[255px]" : "w-[243px] md:w-[340px]"}`}
+              className={`flex my-auto sm:cursor-pointer transition-all duration-300 ease-in-out ${isScrolled ? "w-[182px] md:w-[255px]" : "w-[243px] md:w-[340px]"}`}
               sizes="33vw"
               priority
             />
