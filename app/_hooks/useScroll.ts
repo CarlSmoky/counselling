@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 
 export const useScroll = () => {
-  const [scroll, setsSroll] = useState(false);
+  const [scroll, setSroll] = useState(false);
   
     useEffect(() => {
       const toggleVisibility = () => {
         if (window.scrollY > 100) {
-          setsSroll(true);
+          setSroll(true);
         } else {
-          setsSroll(false);
+          setSroll(false);
         }
       };
   
