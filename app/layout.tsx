@@ -30,7 +30,7 @@ const RootLayout: React.FC<childrenProps> = ({ children }: childrenProps) => {
         <meta name="robots" content="index"/>
       </Head>
       <body className="bg-white-100 w-full h-screen">
-        <main className={`${titleFont.variable} ${paragraphFont.variable} margin-global relative`}>
+        <main className={`${titleFont.variable} ${paragraphFont.variable} flex flex-col justify-between margin-global relative`}>
             <ContactInfoBar />
             <Navbar />
             {children}
