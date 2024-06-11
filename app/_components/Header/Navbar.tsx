@@ -61,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({ isNavOpen, onToggleNav }) => {
           </button>
         </div>
         <ul className="hidden lg:flex items-center text-sm xl:text-base">
-          <NavLinks onToggle={closeNav} />
+          <NavLinks onToggle={closeNav} isNavOpen={isNavOpen}/>
         </ul>
         {/* Mobile nav */}
         <ul
@@ -70,7 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ isNavOpen, onToggleNav }) => {
           aria-hidden={!isNavOpen}
           className={`lg:hidden bg-grey-300 fixed w-full top-0 overflow-y-auto bottom-0 pt-28 md:pt-36 text-base md:text-xl duration-300 ${isNavOpen ? "left-0 z-30" : "left-[-100%] z-10"}`}
         >
-          <NavLinks onToggle={closeNav} />
+          <NavLinks onToggle={closeNav} isNavOpen={isNavOpen}/>
         </ul>
       </div>
       <div className="h-1 shadow-bottom-only"></div>

@@ -1,5 +1,6 @@
 "use client";
-import React, { useState, Fragment } from "react";
+import React, { useState, useEffect, Fragment } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { LinkInfo, Sublink } from "../../_types/types";
 import { navList } from "../../_data/navList";
@@ -8,38 +9,73 @@ import { toTitleCase } from "../../_util/textFormat";
 
 type NavLinksProps = {
   onToggle: () => void;
+  isNavOpen: boolean;
 };
 
-const NavLinks: React.FC<NavLinksProps> = ({ onToggle }) => {
+const NavLinks: React.FC<NavLinksProps> = ({ onToggle, isNavOpen }) => {
   const [heading, setHeading] = useState<string>("");
+  const [navigateTo, setNavigateTo] = useState<string | null>(null);
+  const router = useRouter();
 
-  const clickHandler = () => {
+  const clickHandler = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    link: string,
+  ) => {
+    e.preventDefault();
     onToggle();
     setHeading("");
+    setNavigateTo(link);
   };
 
-  
+  useEffect(() => {
+    if (navigateTo) {
+      router.push(navigateTo);
+      // Use setTimeout to ensure the navigation happens first
+      setTimeout(() => {
+        const contentHeader = document.getElementById("content-header");
+        if (contentHeader) {
+          contentHeader.setAttribute("tabindex", "-1");
+          contentHeader.focus();
+        }
+      }, 100); // Small delay to ensure the navigation completes
+      setNavigateTo(null);
+    }
+  }, [navigateTo, router]);
 
   return (
     <>
       {navList.map((link: LinkInfo, i) => (
         <Fragment key={i}>
           <li className="group text-left md:cursor-pointer">
-            <Link onClick={clickHandler} href={link.link} aria-label={toTitleCase(link.name)}>
-              <div className={`flex px-8 py-7 align-baseline hover:text-grey-200 lg:px-2`}>
+            <Link
+              onClick={(e) => clickHandler(e, link.link)}
+              href={link.link}
+              aria-label={toTitleCase(link.name)}
+              tabIndex={isNavOpen ? 0 : -1} // Ensure link is not focusable when nav is closed
+            >
+              <div
+                className={`flex px-8 py-7 align-baseline hover:text-grey-200 lg:px-2`}
+              >
                 {toTitleCase(link.name)}
                 {link.submenu && (
                   <button
                     className="mx-4 inline px-2 text-2xl lg:hidden"
                     onClick={(e) => {
                       e.preventDefault();
-                      heading !== link.name ? setHeading(link.name) : setHeading("");
+                      heading !== link.name
+                        ? setHeading(link.name)
+                        : setHeading("");
                     }}
                     aria-expanded={heading === link.name}
                     aria-controls={`submenu-${i}`}
                     aria-label={`Toggle submenu for ${toTitleCase(link.name)}`}
+                    tabIndex={isNavOpen ? 0 : -1} // Ensure link is not focusable when nav is closed
                   >
-                    {heading === link.name ? <RiArrowUpSLine /> : <RiArrowDownSLine />}
+                    {heading === link.name ? (
+                      <RiArrowUpSLine />
+                    ) : (
+                      <RiArrowDownSLine />
+                    )}
                   </button>
                 )}
                 {link.submenu && (
@@ -52,10 +88,20 @@ const NavLinks: React.FC<NavLinksProps> = ({ onToggle }) => {
             {link.submenu && (
               <div>
                 <div className="absolute top-20 z-10 hidden hover:lg:block group-hover:lg:block">
-                  <ul id={`submenu-${i}`} className="grid grid-cols-3 rounded-sm bg-prime-100 px-5">
+                  <ul
+                    id={`submenu-${i}`}
+                    className="grid grid-cols-3 rounded-sm bg-prime-100 px-5"
+                  >
                     {link.sublinks?.map((slink: Sublink, j) => (
-                      <li key={j} className="my-2.5 text-sm transition-all duration-300 ease-in-out hover:text-grey-200">
-                        <Link href={slink.link} aria-label={slink.name}>
+                      <li
+                        key={j}
+                        className="my-2.5 text-sm transition-all duration-300 ease-in-out hover:text-grey-200"
+                      >
+                        <Link
+                          href={slink.link}
+                          aria-label={slink.name} 
+                          tabIndex={isNavOpen ? 0 : -1} // Ensure link is not focusable when nav is closed
+                        >
                           {slink.name}
                         </Link>
                       </li>
@@ -69,8 +115,15 @@ const NavLinks: React.FC<NavLinksProps> = ({ onToggle }) => {
           <ul className={`${heading === link.name ? "lg:hidden" : "hidden"}`}>
             {/* sublinks */}
             {link.sublinks?.map((slink: Sublink, j) => (
-              <li key={j} className="py-3 pl-14 text-sm transition-all duration-300 ease-in-out hover:text-black-100">
-                <Link onClick={clickHandler} href={slink.link} aria-label={slink.name}>
+              <li
+                key={j}
+                className="py-3 pl-14 text-sm transition-all duration-300 ease-in-out hover:text-black-100"
+              >
+                <Link
+                  onClick={(e) => clickHandler(e, slink.link)}
+                  href={slink.link}
+                  aria-label={slink.name}
+                >
                   {slink.name}
                 </Link>
               </li>
