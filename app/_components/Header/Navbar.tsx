@@ -45,7 +45,7 @@ const Navbar: React.FC<NavbarProps> = ({ isNavOpen, onToggleNav }) => {
             <Image
               src={Logo}
               alt="Interactive Counseling Resource"
-              className={`flex my-auto sm:cursor-pointer transition-all duration-300 ease-in-out ${isScrolled ? "w-[182px] md:w-[255px]" : "w-[243px] md:w/[340px]"}`}
+              className={`flex my-auto sm:cursor-pointer transition-all duration-300 ease-in-out ${isScrolled ? "w-[182px] md:w-[255px]" : "w-[243px] md:w-[340px]"}`}
               sizes="33vw"
               priority
             />
