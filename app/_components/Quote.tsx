@@ -7,11 +7,12 @@ type QuoteProps = {
 
 const Quote: React.FC<QuoteProps> = ({ quote, author }) => {
   return (
-    <div className="whitespace-pre-line italic leading-loose m-4 bg-grey-300">
-      <blockquote className="px-4 p-5 leading-loose">
-        &quot;{quote}&quot;
-        <br/>
-        <p className="font-bold pt-4">{author}</p>
+    <div className="m-4 whitespace-pre-line bg-grey-300 italic leading-loose">
+      <blockquote className="p-5 px-4 leading-loose">
+        <p>
+          {quote}
+          <span className="pt-4 font-bold">{author}</span>
+        </p>
       </blockquote>
     </div>
   );

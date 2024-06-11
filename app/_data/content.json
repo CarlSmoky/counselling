@@ -112,7 +112,7 @@
   "workshops" : [
     {
     "component": "quote",
-    "quote" : "The most common way people give up their power is by thinking they don’t have any.",
+    "quote" : "\"The most common way people give up their power is by thinking they don’t have any.\"\n",
     "author": "– Alice Walker"
     },
     {
@@ -169,7 +169,7 @@
 "clinical-supervision" : [
     {
       "component" : "quote",
-      "quote" : "Forget your perfect offering\nThere is a crack in everything\nThat’s how the light gets in",
+      "quote" : "\"Forget your perfect offering\nThere is a crack in everything\nThat’s how the light gets in\"\n",
       "author": "– Leonard Cohen."
     },
     {
