@@ -37,7 +37,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ onToggle, isNavOpen }) => {
           contentHeader.setAttribute("tabindex", "-1");
           contentHeader.focus();
         }
-      }, 100); // Small delay to ensure the navigation completes
+      }, 200); // Small delay to ensure the navigation completes
       setNavigateTo(null);
     }
   }, [navigateTo, router]);
